@@ -1,3 +1,11 @@
+<div align="center">
+
+<h1>long_term_memory_chat</h1>
+
+<img src="https://moe-counter.glitch.me/get/@LTMC?theme=moebooru" /><br>
+
+</div>
+
 # long_term_memory_chat
 This project leverages code from the [hyperDB](https://github.com/jdagdelen/hyperDB) repository, a powerful database
 
