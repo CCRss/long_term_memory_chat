@@ -7,7 +7,7 @@ import torch
 import torch.nn.functional as F
 
 
-from .galaxy_brain_math_shit import ( #с точкой перед galaxy_..as.a. я смогу запустить main.py
+from .galaxy_brain_math_shit import ( #with dot before galaxy_..as.a. I can use main.py
     adams_similarity,
     cosine_similarity,
     derridaean_similarity,
