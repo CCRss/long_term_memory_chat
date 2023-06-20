@@ -35,7 +35,7 @@ def handle_message(update: Update, context: CallbackContext) -> None:
 
     query_results = db.query(message.text) # Query the database with the user's message
    
-    filtered_results = [result for result in query_results if result[1] > 0.63]  # Filter the results to only include documents with similarity > 0.63
+    filtered_results = [result for result in query_results if result[1] > 0.55]  # Filter the results to only include documents with similarity > 0.45
 
     # If there are any filtered results, add them to the user's message
     if filtered_results:
