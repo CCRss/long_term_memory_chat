@@ -4,9 +4,9 @@ Hello! In this project, I am using code from the [hyperDB](https://github.com/jd
 LTM_chat (long_term_memory_chat) Chat Assistant is a conversational assistant built using OpenAI's GPT-3.5 model. It allows users to have dynamic and engaging interactions with different personalities.
 
 ## Features
-Interactive bot with various personalities
-Conversation history tracking for personalized interactions
-Ability to query previous conversations for better context understanding
+- Interactive bot with various personalities
+- Conversation history tracking for personalized interactions
+- Ability to query previous conversations for better context understanding
 
 # Setup & Installation
 ## Prerequisites
@@ -26,6 +26,14 @@ cd long_term_memory_chat
 ```
 pip install -r requirements.txt
 ```
+4. Update the api_keys.json file with your OpenAI key and Telegram key:
+```
+{
+"openai_key": "Your OpenAI key here", 
+"telegram_key": "Your Telegram key here"
+}
+```
+
 
 # Usage
 To start the chat assistant, run the following command:
