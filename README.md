@@ -1,17 +1,55 @@
 # long_term_memory_chat
-Hello! In this project, I am using code from the [hyperDB](https://github.com/jdagdelen/hyperDB) repository. HyperDB is a hyper-powered database!
+Welcome! This project leverages code from the [hyperDB](https://github.com/jdagdelen/hyperDB) repository, a powerful database
 
-LTM_chat (long_term_memory_chat) Chat Assistant is a conversational assistant built using OpenAI's GPT-3.5 model. It allows users to have dynamic and engaging interactions with different personalities.
+The LTM_chat (long_term_memory_chat) Chat Assistant is an AI-powered bot built on OpenAI's GPT-3.5 model. The key feature of this assistant is its long-term memory capabilities, allowing it to remember and reference past conversations for an engaging and dynamic user experience.
 
 ## Features
-- Interactive bot with various personalities
-- Conversation history tracking for personalized interactions
-- Ability to query previous conversations for better context understanding
+- Long-term memory for retaining conversation history
+- Ability to query previous conversations for context awareness and richer responses
+- Multiple personas for varied interaction styles
+
+  
+# How it works
+The core functionality of the chat assistant is in the handle_message function(main.py). 
+Here is a brief rundown of its operation:
+1. The function retrieves the current conversation history.
+2. It appends the user's message to the conversation history.
+3. The database is queried with the user's message and any results with similarity scores over a certain threshold (0.63 in this example) are filtered out.
+4. These highly similar previous conversations, if any, are added to the user's message as 'Previous Conversation'.
+5. The entire conversation history, including the user's latest message and any relevant 'Previous Conversations', is sent to the GPT-3.5 model.
+6. The model generates a response which is added to the conversation history.
+7. This updated conversation history is stored in the database and the database is saved to disk.
+8. Finally, the assistant's response is sent back to the user.
+
+Here's an example of how this process works:
+```
+User: Hi Yuuki
+Assistant: Hello there! How may I assist you today?
+User: Hello my little cat-girl
+Assistant: Hello! How can I assist you today?
+```
+When the user prompts "How are you today?", the assistant queries the database with the prompt, and the similar past conversations are added to the prompt as 'Previous Conversation':
+```
+Prompt: How are you today?
+
+Previous Conversation:
+User: Hi Yuuki
+Assistant: Hello there! How may I assist you today?
+Similarity: 0.3779277801513672
+
+Previous Conversation:
+User: Hello my little cat-girl
+Assistant: Hello! How can I assist you today?
+Similarity: 0.319595068693161
+```
+This augmented prompt is then sent to the GPT-3.5 model for response generation.
+
 
 # Setup & Installation
 ## Prerequisites
 - Python 3.7+
 - pip (Python package installer)
+
   
 ## Steps
 1. Clone the repository:
@@ -48,4 +86,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 
 # License
-This project is licensed under the MIT License. See LICENSE for more information.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
