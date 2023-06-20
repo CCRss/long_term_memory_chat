@@ -2,7 +2,7 @@
 
 <h1></h1>
 
-<img src="https://moe-counter.glitch.me/get/@LTMC?theme=moebooru" /><br>
+<img src="https://moe-counter.glitch.me/get/@LTMC?theme=rule34" /><br>
 
 </div>
 
